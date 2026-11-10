@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BSIT 2D Grade Management | CCDI EDU</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body data-page="grades" data-role="professor">
+    <div id="toast" class="toast">
+    </div>
+    <section id="appPage" class="app-page">
+      <header class="app-topbar">
+        <button class="mobile-menu" onclick="toggleSidebar()">[menu]</button>
+        <a class="brand" href="index.html">
+        <img class="brand-logo" src="image/CCDI EDU.png" alt="CCDI EDU">
+        <div>
+          <strong>CCD<span class="brand-accent">i</span> EDU</strong>
+          <small>Computer Communication Development Institute</small>
+        </div>
+      </a>
+      <div class="top-actions">
+        <button class="icon-btn" title="Notifications" onclick="showPage('notifications')">🔔</button>
+        <div class="profile-menu">
+          <button class="profile-btn" onclick="toggleProfileMenu()">
+          <span class="avatar">Y</span>
+          <span>Prof. Ynna</span>
+          <span></span>
+        </button>
+        <div id="profileDropdown" class="dropdown">
+          <button onclick="showPage('profile')">My Profile</button>
+          <button onclick="showPage('settings')">Settings</button>
+          <a href="index.html">Logout</a>
+        </div>
+      </div>
+    </div>
+  </header>
+ <aside id="sidebar" class="sidebar">
+    <div class="sidebar-role" id="sidebarRole">PROFESSOR</div>
+    <a href="dashboard-professor.html"><button class="nav-item"><span>Home</span>
+  </button></a>
+  <a href="ann_prof.html"><button  class="nav-item " ><span>Announcements</span>
+</button></a>
+<a href="eventsProf.html"><button class="nav-item"> <span>Events</span>
+</button></a>
+<a href="sched_prof.html"><button class="nav-item"><span>Class Schedule</span>
+</button></a>
+<a href="gradeProf.html"> <button class="nav-item active"><span>Grades</span>
+</button></a>
+<a href="settings-professor.html"> <button class="nav-item"> <span>Settings</span>
+</button></a>
+</aside>
+
+
+<main class="app-content">
+  <section class="page-title"><div><h1>Grade Management</h1><p>Enter and publish grades for a BSIT 2D student account.</p></div></section>
+  <div class="grade-toolbar"><div><strong>BS Information Technology · 2nd Year · Block D</strong><span class="muted">1st Semester, AY 2026-2027</span></div><span id="angeloGradeStatus" class="badge badge-warning">Draft changes</span></div>
+  <div class="panel gradebook-panel">
+    <div class="panel-head"><div><h2>Student gradebook</h2><p class="muted">Enter grades from 1.00 (highest) to 5.00. Use 0.00 for incomplete records.</p></div></div>
+    <form id="angeloStudentLookup" onsubmit="loadIT2DGrades(event)">
+      <div class="form-group"><label for="angeloStudentNumber">Student CCDI ID</label><input id="angeloStudentNumber" required placeholder="CCDI-2026-0001"></div>
+      <button class="btn btn-outline" type="submit">Load Saved Grades</button>
+    </form>
+    <div class="table-wrap"><table class="gradebook-table"><thead><tr><th>Subject Code</th><th>Subject</th><th>Prelim</th><th>Midterm</th><th>Pre-final</th><th>Final</th></tr></thead><tbody id="angeloGradeRows"></tbody></table></div>
+    <div class="title-actions"><button class="btn btn-outline" type="button" onclick="saveIT2DGrades()">Save Draft</button><button class="btn btn-primary" type="button" onclick="publishIT2DGrades()">Publish Grades</button></div>
+  </div>
+  <div class="grade-note"><strong>Before publishing:</strong> review every entry carefully. Published grades become visible to the matching student account.</div>
+  <div class="panel">
+    <div class="panel-head"><div><h2>Student Record Preview</h2><p class="muted">Only published grades appear in the student account.</p></div></div>
+    <div class="table-wrap"><table><thead><tr><th>Subject Code</th><th>Subject</th><th>Prelim</th><th>Midterm</th><th>Pre-final</th><th>Final</th><th>Status</th></tr></thead><tbody id="angeloPublishedGradeRows"></tbody></table></div>
+  </div>
+</main>
+
+</section>
+  <script src="script.js" defer></script>
+</body>
+</html>

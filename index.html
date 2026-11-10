@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CCDI EDU | School Information & Communication</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="toast" class="toast"></div>
+
+  <!-- PUBLIC SITE -->
+  <section id="publicPage" class="public-page">
+    <header class="topbar public-nav">
+        <a class="brand" href="#home" onclick="showPublic('home')">
+        
+          <img class="brand-logo" src="image/CCDI EDU.png" alt="CCDI EDU">
+        
+        <div>
+          <strong>CCD<span class="brand-accent">i</span> EDU</strong>
+          <small>Computer Communication Development Institute</small>
+        </div>
+      </a>
+      <nav>
+        <a href="#home" onclick="showPublic('home')">Home</a>
+        <a href="#academics" onclick="showPublic('academics')">Academics</a>
+        <a href="#announcements" onclick="showPublic('announcements')">Announcements</a>
+        <a href="#about" onclick="showPublic('about')">About</a>
+      </nav>
+      <form class="site-search" id="siteSearchForm" role="search">
+        <label class="visually-hidden" for="siteSearchInput">Search this page</label>
+        <input id="siteSearchInput" type="search" placeholder="Search this page" autocomplete="off">
+        <button class="site-search-clear" id="siteSearchClear" type="button" aria-label="Clear search" hidden>×</button>
+        <button class="site-search-submit" type="submit">Search</button>
+      </form>
+      <button class="btn btn-light" onclick="openLogin()">Login</button>
+    </header>
+
+    <main id="publicContent">
+      <p id="publicSearchEmpty" class="public-search-empty" role="status" hidden>No matching results on this page.</p>
+      <section class="hero" id="home">
+        <div>
+          <h1>Welcome to <span>CCDI EDU</span></h1>
+          <p>Your one-stop platform for school information, communication, and services at Computer Communication Development Institute.</p>
+          <div class="hero-buttons"><a class="btn btn-primary" href="#loginModal" onclick="openLogin(); return false;">Login Now</a><a class="btn btn-outline" href="#about" onclick="showPublic('about')">Learn More</a></div>
+        </div>
+        <img class="hero-visual" src="image/ccdi.jpg" alt="CCDI Campus">
+      </section>
+      <section class="public-section" id="academics">
+        <h1>Academics</h1>
+        <p class="muted">Access academic information after signing in to CCDI EDU.</p>
+        <div class="feature-grid" style="margin-top:25px">
+          <div class="feature-card"><div class="feature-icon">✓</div><h3>Grades</h3><p>Students can view released grades while authorized professors can manage grades for assigned classes.</p></div>
+          <div class="feature-card"><div class="feature-icon">▤</div><h3>Class Schedule</h3><p>Students can view their schedules and professors can access assigned class information.</p></div>
+          <div class="feature-card"><div class="feature-icon">▧</div><h3>Enrollment</h3><p>View requirements, procedures, deadlines, and current enrollment status.</p></div>
+          <div class="feature-card"><div class="feature-icon">▣</div><h3>Announcements</h3><p>Receive official academic announcements and class-related updates.</p></div>
+        </div>
+      </section>
+      <section class="public-section" id="announcements">
+        <h1>Announcements</h1>
+        <p class="muted">Official school announcements and updates.</p>
+        <div class="announcement-list" style="margin-top:25px">
+          <article class="announcement-card"><div class="announcement-image"><img src="image/enroll.jpg" alt="Enrollment"></div><div><h3>Enrollment for SY 2026-2027 is now open!</h3><p>Students are reminded to complete the enrollment process before the announced deadline.</p><small class="muted">September 10, 2026</small></div></article>
+          <article class="announcement-card"><div class="announcement-image"><img src="image/night.jpeg" alt="Weather Advisory"></div><div><h3>CCDI College Night</h3><p>Join the campus community for an evening of performances and activities.</p><small class="muted">September 26, 2026</small></div></article>
+          <article class="announcement-card"><div class="announcement-image"><img src="image/announcement.jpeg" alt="Weather Advisory"></div><div><h3>Class suspensions due to weather advisory</h3><p>Please check official school announcements for schedule changes.</p><small class="muted">November 11, 2026</small></div></article>
+          <article class="announcement-card"><div class="announcement-image"><img src="image/exam.jpeg" alt="Weather Advisory"></div><div><h3>Pre-Final Examinations Schedule</h3><p>Please check the official schedule for final examination dates and times.</p><small class="muted">November 12, 2026</small></div></article>
+          
+          <article class="announcement-card"><div class="announcement-image"><img src="image/intrams.jpeg" alt="Weather Advisory"></div><div><h3>CCDI Intramurals 2026</h3><p>Join the campus community for an evening of performances and activities.</p><small class="muted">Comming Soon</small></div></article>
+          <article class="announcement-card"><div class="announcement-image"><img src="image/fun.jpeg" alt="Weather Advisory"></div><div><h3>CCDI Fun Run</h3><p>Registration information and route details will be posted soon.</p><small class="muted">Coming Soon</small></div></article>
+
+        </div>
+      </section>
+      <section class="public-section" id="about">
+        <h1>About CCDI EDU</h1>
+        <p class="muted">A centralized school information and communication website proposed for Computer Communication Development Institute.</p>
+        <div class="info-box"><h3>Purpose</h3><p>CCDI EDU brings announcements, schedules, meetings, tuition information, enrollment requirements, notifications, and other school-related information into one accessible platform.</p></div>
+        <div class="info-box"><h3>Designed for</h3><p>Students, professors, and authorized school administrators/staff, with role-based access to the functions needed by each user.</p></div>
+        <pre> 
+           
+           
+           
+           
+           
+           
+           
+           
+           
+          
+        </pre>
+      </section>
+    </main>
+  </section>
+
+  <!-- APPLICATION -->
+  <section id="appPage" class="app-page hidden">
+    <header class="app-topbar">
+      <button class="mobile-menu" onclick="toggleSidebar()">☰</button>
+      <a class="brand">
+        <img class="brand-logo" src="image/CCDI EDU.png" alt="CCDI EDU">
+        <div>
+          <strong>CCD<span class="brand-accent">i</span> EDU</strong>
+          <small>Computer Communication Development Institute</small>
+        </div>
+      </a>
+      <div class="top-actions">
+        <button class="icon-btn" title="Notifications" onclick="showPage('notifications')">🔔<span class="notification-dot"></span></button>
+        <div class="profile-menu">
+          <button class="profile-btn" onclick="toggleProfileMenu()">
+            <span class="avatar"></span>
+            <span id="topUserName"></span>
+            <span>⌄</span>
+          </button>
+          <div id="profileDropdown" class="dropdown">
+            <button onclick="showPage('profile'); toggleProfileMenu()">My Profile</button>
+            <button onclick="showPage('settings'); toggleProfileMenu()">Settings</button>
+            <button onclick="logout()">Logout</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <aside id="sidebar" class="sidebar">
+      <div class="sidebar-role" id="sidebarRole">STUDENT</div>
+      <button class="nav-item active" data-page="dashboard" onclick="showPage('dashboard')">⌂ <span>Home</span></button>
+      <button class="nav-item" data-page="announcements" onclick="showPage('announcements')">▣ <span>Announcements</span></button>
+      <button class="nav-item" data-page="schedule" onclick="showPage('schedule')">▤ <span>Class Schedule</span></button>
+      <button class="nav-item" data-page="grades" onclick="showPage('grades')">✓ <span>Grades</span></button>
+      <button class="nav-item" data-page="payments" onclick="showPage('payments')">₱ <span>Tuition</span></button>
+      <button class="nav-item" data-page="shop" onclick="showPage('shop')">▣ <span>CCDI Shop</span></button>
+      <button class="nav-item" data-page="events" onclick="showPage('events')">◷ <span>Events</span></button>
+      <button class="nav-item" data-page="profile" onclick="showPage('profile')">● <span>Profile</span></button>
+      <button class="nav-item" data-page="settings" onclick="showPage('settings')">⚙ <span>Settings</span></button>
+      <div class="sidebar-spacer"></div>
+      <button class="nav-item logout-link" onclick="logout()">↪ <span>Log Out</span></button>
+    </aside>
+
+    <main id="appContent" class="app-content"></main>
+  </section>
+
+  <!-- LOGIN MODAL -->
+  <div id="loginModal" class="modal hidden">
+    <div class="modal-card login-card">
+      <button class="modal-close" onclick="closeLogin()">×</button>
+      <img class="login-logo" src="image/CCDI EDU.png" alt="CCDI EDU">
+      <h1>Welcome Back!</h1>
+      <p class="muted">Log in to your CCDI EDU account</p>
+
+      <form onsubmit="login(event)">
+        <label>CCDI ID Number</label>
+        <input id="loginId" required autocomplete="username" placeholder="CCDI ID">
+
+        <label>Password</label>
+        <div class="password-wrap">
+          <input id="loginPassword" type="password" required placeholder="Enter your password">
+          <button type="button" onclick="togglePassword()"></button>
+        </div>
+
+        <button class="btn btn-primary full" type="submit">Login</button>
+      </form>
+
+      <div class="or"><span>OR</span></div>
+      <button class="btn btn-outline full" onclick="openRegister()">Create Student Account</button>
+        <p class="login-note"><a class="text-link" href="professor-register.html">Register as a professor with an invitation</a></p>
+      <p class="login-note">Your school account determines your access. Contact the school office if you need an account.</p>
+    </div>
+  </div>
+
+  <!-- SIGNUP AND ENROLLMENT MODAL -->
+  <div id="registerModal" class="modal hidden">
+    <div class="modal-card enrollment-signup-card">
+      <button class="modal-close" onclick="closeRegister()">×</button>
+      <img class="mini-brand" src="image/CCDI EDU.png" alt="CCDI EDU">
+      <div class="signup-step" data-signup-step="1">
+        <span class="eyebrow">STEP 1 OF 3 · ENROLLMENT FORM</span>
+        <h2>Create your student account</h2>
+        <p class="muted">Complete your enrollment information before continuing.</p>
+        <form onsubmit="continueSignup(event)">
+          <div class="form-grid signup-form-grid">
+            <div class="form-group"><label>Last name</label><input id="regLastName" required autocomplete="family-name" placeholder="Last name"></div>
+            <div class="form-group"><label>First name</label><input id="regFirstName" required autocomplete="given-name" placeholder="First name"></div>
+            <div class="form-group"><label>Middle name</label><input id="regMiddleName" autocomplete="additional-name" placeholder="Middle name (optional)"></div>
+            <div class="form-group"><label>Birthday</label><input id="regBirthday" required type="date" autocomplete="bday"></div>
+            <div class="form-group"><label>Sex</label><select id="regSex" required><option value="">Select sex</option><option>Female</option><option>Male</option><option>Others</option></select></div>
+            <div class="form-group"><label>Phone number</label><input id="regPhone" required type="tel" placeholder="09XX XXX XXXX"></div>
+            <div class="form-group"><label>Gmail address</label><input id="regEmail" required type="email" placeholder="you@gmail.com"></div>
+            <div class="form-group full-row"><label>Complete address</label><textarea id="regAddress" required placeholder="House number, street, barangay, city/province"></textarea></div>
+            <div class="form-group"><label>Previous school</label><input id="regPreviousSchool" required placeholder="School previously attended"></div>
+            <div class="form-group"><label>Course</label><select id="regCourse" required><option value="">Select course</option><option value="BS Information Technology">BS Information Technology (BSIT)</option><option value="BS Computer Science">BS Computer Science (BSCS)</option><option value="BS Information Systems">BS Information Systems (BSIS)</option><option value="BS Office Administration">BS Office Administration (BSOA)</option><option value="Associate in Computer Technology">Associate in Computer Technology (ACT)</option></select></div>
+            <div class="form-group"><label>Year to enroll</label><select id="regYear" required><option value="">Select year</option><option>1st Year</option><option>2nd Year</option><option>3rd Year</option><option>4th Year</option></select></div>
+            <div class="form-group"><label>Guardian name</label><input id="regGuardian" required placeholder="Parent or guardian"></div>
+            <div class="form-group full-row"><label>Profile picture</label><input id="regPhoto" type="file" accept="image/*"><small class="muted">Optional JPG or PNG photo.</small></div>
+          </div>
+          <button class="btn btn-primary full" type="submit">Next: Entrance Fee</button>
+        </form>
+      </div>
+
+      <div class="signup-step hidden" data-signup-step="2">
+        <span class="eyebrow">STEP 2 OF 3 · PAYMENT</span>
+        <h2>Enrollment fee</h2>
+        <p class="muted">The fee is recorded as a payment request. Your account stays inactive until CCDI staff verifies receipt.</p>
+        <div class="signup-payment-summary"><strong>Enrollment fee</strong><span data-enrollment-fee>Loading fee...</span><small>Manual verification by the finance office</small></div>
+        <label class="form-group" for="regPaymentMethod">Payment method<select id="regPaymentMethod" required><option value="">Select a method</option><option>GCash</option><option>Bank transfer</option><option>Card</option><option>Cashier</option></select></label>
+        <div class="signup-step-actions"><button class="btn btn-outline" type="button" onclick="showSignupStep(1)">Back</button><button class="btn btn-primary" type="button" onclick="continuePayment()">Next: Create Password</button></div>
+      </div>
+
+      <div class="signup-step hidden" data-signup-step="3">
+        <span class="eyebrow">STEP 3 OF 3 · ACCOUNT SETUP</span>
+        <h2>Secure your account</h2>
+        <p class="muted">Create your password. Your CCDI ID is assigned only after the finance office verifies your enrollment payment.</p>
+        <form onsubmit="finishSignup(event)">
+          <label>Password</label><input id="regPassword" type="password" required minlength="8" autocomplete="new-password" placeholder="At least 8 characters">
+          <label>Confirm password</label><input id="regConfirm" type="password" required minlength="8" autocomplete="new-password" placeholder="Repeat your password">
+          <div class="signup-step-actions"><button class="btn btn-outline" type="button" onclick="showSignupStep(2)">Back</button><button class="btn btn-primary" type="submit">Finish and Log In</button></div>
+        </form>
+      </div>
+
+      <div class="signup-step hidden" data-signup-step="4">
+        <span class="eyebrow">ENROLLMENT REQUEST SUBMITTED</span>
+        <h2>Payment verification pending</h2>
+        <p id="signupPendingMessage" class="muted"></p>
+        <p class="muted">You can sign in after the finance office confirms the payment and activates your account.</p>
+        <button class="btn btn-primary full" type="button" onclick="closeRegister()">Done</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

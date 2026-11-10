@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Class Management | CCDI EDU</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="class-management" data-role="admin">
+  <div id="toast" class="toast"></div>
+  <section id="appPage" class="app-page">
+    <header class="app-topbar"><button class="mobile-menu" onclick="toggleSidebar()" aria-label="Open navigation">☰</button><a class="brand" href="dashboard-admin.html"><img class="brand-logo" src="image/CCDI EDU.png" alt="CCDI EDU"><div><strong>CCDI EDU</strong><small>Computer Communication Development Institute</small></div></a><div class="top-actions">
+        <form class="site-search" id="siteSearchForm" role="search">
+        <label class="visually-hidden" for="siteSearchInput">Search this page</label>
+        <input id="siteSearchInput" type="search" placeholder="Search this page" autocomplete="off">
+        <button class="site-search-clear" id="siteSearchClear" type="button" aria-label="Clear search" hidden>×</button>
+        <button class="site-search-submit" type="submit">Search</button>
+      </form>
+        <button class="icon-btn" title="Notifications" onclick="showPage('notifications')">🔔</button>
+        <a class="profile-btn account-profile-avatar" href="profile-admin.html" aria-label="Open profile">
+          <span class="avatar">AD</span>
+        </a>
+        <a class="btn btn-light" href="index.html">Logout</a>
+    </div></header>
+    <aside id="sidebar" class="sidebar"><div class="sidebar-role">ADMIN / STAFF</div><a class="nav-item" data-page="dashboard"><span>Home</span></a><a class="nav-item" data-page="announcements"><span>Announcements</span></a><a class="nav-item" data-page="meetings"><span>Meetings</span></a><a class="nav-item active" data-page="classes"><span>Classes</span></a><a class="nav-item" data-page="users"><span>Users</span></a><a class="nav-item" data-page="finance"><span>Finance</span></a><a class="nav-item" data-page="reports"><span>Reports</span></a><a class="nav-item" data-page="settings"><span>Settings</span></a></aside>
+    <main id="appContent" class="app-content"></main>
+  </section>
+  <div class="app-content static-page-content" id="class-managementTemplate">
+    <section class="page-title"><div><span class="eyebrow">ACADEMIC SETUP</span><h1>Class Management</h1><p>Create class sections, assign subjects and professors, and enroll active students.</p></div></section>
+    <section class="panel"><div class="panel-head"><div><h2>Create a class section</h2><p class="muted">A section is defined by course, year level, and block.</p></div></div>
+      <form id="academicClassForm"><div class="form-grid">
+        <div class="form-group"><label for="academicCourse">Course</label><input id="academicCourse" maxlength="150" required placeholder="BS Information Technology"></div>
+        <div class="form-group"><label for="academicYear">Year level</label><select id="academicYear" required><option>1st Year</option><option>2nd Year</option><option>3rd Year</option><option>4th Year</option></select></div>
+        <div class="form-group"><label for="academicBlock">Block / Section</label><input id="academicBlock" maxlength="5" required placeholder="D"></div>
+      </div><button class="btn btn-primary" type="submit">Save class section</button></form>
+    </section>
+    <section class="panel"><div class="panel-head"><div><h2>Assign subject and professor</h2><p class="muted">This assignment controls the professor's class list and grade permissions.</p></div></div>
+      <form id="classAssignmentForm"><div class="form-grid">
+        <div class="form-group"><label for="assignmentClass">Class section</label><select id="assignmentClass" required><option value="">Load a class section</option></select></div>
+        <div class="form-group"><label for="assignmentSubjectCode">Subject code</label><input id="assignmentSubjectCode" maxlength="30" required></div>
+        <div class="form-group"><label for="assignmentSubjectName">Subject name</label><input id="assignmentSubjectName" maxlength="150" required></div>
+        <div class="form-group"><label for="assignmentUnits">Units</label><input id="assignmentUnits" type="number" min="0" max="20" value="3" required></div>
+        <div class="form-group"><label for="assignmentProfessor">Professor</label><select id="assignmentProfessor" required><option value="">Load professors</option></select></div>
+      </div><button class="btn btn-primary" type="submit">Save assignment</button><p class="muted" data-form-feedback="classAssignmentForm" role="status" aria-live="polite"></p></form>
+    </section>
+    <section class="panel"><div class="panel-head"><div><h2>Enroll a student in a section</h2><p class="muted">The student's active profile must match the course, year, and block.</p></div></div>
+      <form id="classEnrollmentForm"><div class="form-grid">
+        <div class="form-group"><label for="enrollmentClass">Class section</label><select id="enrollmentClass" required><option value="">Load a class section</option></select></div>
+        <div class="form-group"><label for="enrollmentStudentId">Student CCDI ID</label><input id="enrollmentStudentId" maxlength="40" required></div>
+      </div><button class="btn btn-primary" type="submit">Enroll student</button></form>
+    </section>
+    <section class="panel"><div class="panel-head"><div><h2>Grading weights</h2><p class="muted">The total is calculated only with this configured 100% formula.</p></div></div>
+      <form id="gradeWeightsForm"><div class="form-grid grade-weight-grid">
+        <div class="form-group"><label for="prelimWeight">Prelim %</label><input id="prelimWeight" type="number" min="0" max="100" step="0.01" required></div>
+        <div class="form-group"><label for="midtermWeight">Midterm %</label><input id="midtermWeight" type="number" min="0" max="100" step="0.01" required></div>
+        <div class="form-group"><label for="prefinalWeight">Pre-final %</label><input id="prefinalWeight" type="number" min="0" max="100" step="0.01" required></div>
+        <div class="form-group"><label for="finalWeight">Final %</label><input id="finalWeight" type="number" min="0" max="100" step="0.01" required></div>
+      </div><button class="btn btn-primary" type="submit">Save grading formula</button></form>
+    </section>
+    <section class="panel"><div class="panel-head"><div><h2>Professor assignments</h2><p class="muted">Active assignments and current enrolled student counts.</p></div></div>
+      <div class="table-wrap"><table><thead><tr><th>Class</th><th>Subject</th><th>Professor</th><th>Students</th><th>Status</th><th>Action</th></tr></thead><tbody data-admin-class-assignments><tr><td colspan="6" class="muted">Loading assignments...</td></tr></tbody></table></div>
+    </section>
+    <section class="panel"><div class="panel-head"><div><h2>Students by section</h2><p class="muted">Enrolled roster for the selected class.</p></div><div class="form-group"><label for="rosterClass">Class section</label><select id="rosterClass"><option value="">Select a class</option></select></div></div>
+      <div class="table-wrap"><table><thead><tr><th>CCDI ID</th><th>Last Name</th><th>First Name</th><th>Middle Name</th><th>Status</th></tr></thead><tbody data-class-roster><tr><td colspan="5" class="muted">Select a class section to view its students.</td></tr></tbody></table></div>
+    </section>
+  </div>
+  <script src="script.js" defer></script>
+</body>
+</html>

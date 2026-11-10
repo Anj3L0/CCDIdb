@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professor Home | CCDI EDU</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body data-page="dashboard" data-role="professor">
+    <div id="toast" class="toast">
+    </div>
+    <section id="appPage" class="app-page">
+      <header class="app-topbar">
+        <button class="mobile-menu" onclick="toggleSidebar()">[menu]</button>
+        <a class="brand" href="index.html">
+        <img class="brand-logo" src="image/CCDI EDU.png" alt="CCDI EDU">
+        <div>
+          <strong>CCD<span class="brand-accent">i</span> EDU</strong>
+          <small>Computer Communication Development Institute</small>
+        </div>
+      </a>
+      <div class="top-actions">
+        <button class="icon-btn" title="Notifications" onclick="showPage('notifications')">🔔</button>
+        <div class="profile-menu">
+          <button class="profile-btn" onclick="toggleProfileMenu()">
+          <a href="profileProf.html"><span class="avatar">Y</span></a>
+          <span>Prof. Ynna</span>
+          <span></span>
+        </button>
+        <div id="profileDropdown" class="dropdown">
+          <button onclick="showPage('profile')">My Profile</button>
+          <button onclick="showPage('settings')">Settings</button>
+          <a href="index.html">Logout</a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-role" id="sidebarRole">PROFESSOR</div>
+    <a href="dashboard-professor.html"><button class="nav-item" onclick="showPage('dashboard')"><span>Home</span>
+  </button></a>
+  <a href="ann_prof.html"><button  class="nav-item active"><span>Announcements</span>
+</button></a>
+<a href="eventsProf.html"><button class="nav-item"> <span>Events</span>
+</button></a>
+<a href="sched_prof.html"><button class="nav-item"><span>Class Schedule</span>
+</button></a>
+<a href="gradeProf.html"> <button class="nav-item" ><span>Grades</span>
+</button></a>
+<a href="settings-professor.html"> <button class="nav-item"> <span>Settings</span>
+</button></a>
+</aside>
+
+</section>
+
+<div class="app-content static-page-content" id="announcementsTemplate">
+  <section class="page-title"><div><h1>Announcements</h1><p>Important enrollment, campus, and academic notices.</p></div></section>
+  <div class="announcement-list announcement-feed">
+    <article class="announcement-card"><div class="announcement-image"><img src="image/enroll.jpg" alt="Enrollment at CCDI" onerror="this.hidden=true"></div><div><span class="eyebrow">ENROLLMENT</span><h3>Enrollment for AY 2026-2027 is open</h3><p>Complete your enrollment requirements and confirm your course, year, and block with the registrar.</p><small class="muted">October 5, 2026</small></div></article>
+    <article class="announcement-card"><div class="announcement-image"><img src="image/night.jpeg" alt="CCDI College Night" onerror="this.hidden=true"></div><div><span class="eyebrow">CAMPUS EVENT</span><h3>CCDI College Night</h3><p>Join fellow students for an evening of live performances, campus activities, and community celebration.</p><small class="muted">October 24, 2026</small></div></article>
+    <article class="announcement-card"><div class="announcement-image"><img src="image/announcement.jpeg" alt="Class suspension advisory" onerror="this.hidden=true"></div><div><span class="eyebrow">ADVISORY</span><h3>Class suspension advisories</h3><p>Official class suspension announcements will be posted here. Check for updates before traveling to campus.</p><small class="muted">As announced</small></div></article>
+    <article class="announcement-card"><div class="announcement-image"><img src="image/intrams.jpeg" alt="CCDI Intramurals" onerror="this.hidden=true"></div><div><span class="eyebrow">STUDENT LIFE</span><h3>CCDI Intramurals</h3><p>Prepare for inter-department competitions. Registration and game schedules will be posted soon.</p><small class="muted">November 2026</small></div></article>
+    <article class="announcement-card"><div class="announcement-image"><img src="image/fun.jpeg" alt="CCDI Fun Run" onerror="this.hidden=true"></div><div><span class="eyebrow">STUDENT LIFE</span><h3>CCDI Fun Run</h3><p>Join our campus community for a fun run. Route, registration, and assembly details are coming soon.</p><small class="muted">November 2026</small></div></article>
+    <article class="announcement-card"><div class="announcement-image"><img src="image/exam.jpeg" alt="Pre-final examination reminder" onerror="this.hidden=true"></div><div><span class="eyebrow">ACADEMIC REMINDER</span><h3>Pre-final examinations are coming</h3><p>Review your class schedule and coordinate with instructors for subject-specific exam reminders.</p><small class="muted">December 2026</small></div></article>
+  </div>
+</div>
+<script src="script.js">
+</script>
+</body>
+</html>

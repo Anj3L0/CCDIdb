@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Classes | CCDI EDU</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body data-page="classes" data-role="professor">
+    <div id="toast" class="toast">
+    </div>
+    <section id="appPage" class="app-page">
+      <header class="app-topbar">
+        <button class="mobile-menu" onclick="toggleSidebar()" aria-label="Open navigation">☰</button>
+        <a class="brand" href="dashboard-professor.html"><img class="brand-logo" src="image/CCDI EDU.png" alt="CCDI EDU"><div><strong>CCD<span class="brand-accent">i</span> EDU</strong><small>Computer Communication Development Institute</small></div></a>
+        <div class="top-actions">
+          <form class="site-search" id="siteSearchForm" role="search">
+        <label class="visually-hidden" for="siteSearchInput">Search this page</label>
+        <input id="siteSearchInput" type="search" placeholder="Search this page" autocomplete="off">
+        <button class="site-search-clear" id="siteSearchClear" type="button" aria-label="Clear search" hidden>×</button>
+        <button class="site-search-submit" type="submit">Search</button>
+      </form>
+        <button class="icon-btn" title="Notifications" onclick="showPage('notifications')">🔔</button>
+        <div class="profile-menu">
+          
+           <a class="profile-btn account-profile-avatar" href="profileProf.html" aria-label="Open profile">
+          <span class="avatar">AD</span>
+          </a>
+      </header>
+    <aside id="sidebar" class="sidebar">
+      <div class="sidebar-role" id="sidebarRole">PROFESSOR</div>
+      <button class="nav-item" data-page="dashboard" onclick="showPage('dashboard')">âŒ‚ <span>Home</span>
+    </button>
+    <button class="nav-item active" data-page="classes" onclick="showPage('classes')">â–¦ <span>My Classes</span>
+  </button>
+<button class="nav-item" data-page="schedule" onclick="showPage('schedule')">â–¤ <span>Schedule</span>
+</button>
+<button class="nav-item" data-page="settings" onclick="showPage('settings')">âš™ <span>Settings</span>
+</button>
+</aside>
+<main id="appContent" class="app-content">
+</main>
+</section>
+<div class="app-content static-page-content" id="classesTemplate">
+  <section class="page-title"><div><span class="eyebrow">FACULTY WORKSPACE</span><h1>My Classes</h1><p>Select an assigned subject to open its gradebook.</p></div></section>
+  <section class="panel"><div class="panel-head"><div><h2>Assigned class and subject</h2><p class="muted">Only assignments recorded for your account are listed.</p></div></div><div class="assignment-grid" data-professor-assignments><p class="muted">Loading your assignments...</p></div></section>
+  <section class="panel hidden" id="professorGradebook"><div class="panel-head"><div><span class="eyebrow">SELECTED ASSIGNMENT</span><h2 data-selected-assignment></h2><p class="muted" data-grade-weight-formula></p></div><button class="btn btn-outline" type="button" data-close-gradebook>Back to classes</button></div>
+    <div class="gradebook-actions"><button class="btn btn-outline" type="button" data-save-assignment-grades="draft">Save Draft</button><button class="btn btn-primary" type="button" data-save-assignment-grades="published">Save and Publish</button></div>
+    <div class="table-wrap"><table class="gradebook-table"><thead><tr><th>CCDI ID</th><th>Last Name</th><th>First Name</th><th>Middle Name</th><th>Prelim</th><th>Midterm</th><th>Pre-final</th><th>Final</th><th>Total</th><th>Status</th><th>Action</th></tr></thead><tbody data-assignment-grade-rows><tr><td colspan="11" class="muted">Select an assignment.</td></tr></tbody></table></div>
+  </section>
+</div>
+  <script src="script.js" defer></script>
+</body>
+</html>
+

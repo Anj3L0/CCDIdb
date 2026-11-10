@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Profile | CCDI EDU</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="profile" data-role="admin">
+  <div id="toast" class="toast"></div>
+  <section id="appPage" class="app-page">
+    <header class="app-topbar"><a class="brand" href="dashboard-admin.html"><img class="brand-logo" src="image/CCDI EDU.png" alt="CCDI EDU"><div><strong>CCDI EDU</strong><small>Computer Communication Development Institute</small></div></a><a class="btn btn-light" href="index.html">Logout</a></header>
+    <aside id="sidebar" class="sidebar"><div class="sidebar-role">ADMIN / STAFF</div></aside>
+    <main id="appContent" class="app-content"></main>
+  </section>
+  <div class="app-content static-page-content" id="profileTemplate">
+    <section class="page-title"><div><span class="eyebrow">ADMIN ACCOUNT</span><h1>My Profile</h1><p>Account identity and contact information.</p></div></section>
+    <div class="profile-grid">
+      <section class="panel profile-card"><div class="big-avatar">AD</div><h2 data-profile-name></h2><p class="muted">Administrator</p><div class="profile-id"><small>CCDI ID</small><strong data-profile-value="ccdiId">Loading...</strong></div></section>
+      <section class="panel"><div class="panel-head"><h2>Account Information</h2><button class="btn btn-primary" type="button" onclick="saveProfile()">Save Changes</button></div><div class="form-grid"><div class="form-group"><label>Name</label><input data-profile-value="name" readonly></div><div class="form-group"><label>Role</label><input value="Administrator" readonly></div><div class="form-group"><label>Email</label><input type="email" data-profile-field="email" required></div></div></section>
+    </div>
+  </div>
+  <script src="script.js" defer></script>
+</body>
+</html>

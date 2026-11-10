@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professor Home | CCDI EDU</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body data-page="dashboard" data-role="professor">
+    <div id="toast" class="toast">
+    </div>
+    <section id="appPage" class="app-page">
+      <header class="app-topbar">
+        <button class="mobile-menu" onclick="toggleSidebar()">[menu]</button>
+        <a class="brand" href="index.html">
+        <img class="brand-logo" src="image/CCDI EDU.png" alt="CCDI EDU">
+        <div>
+          <strong>CCD<span class="brand-accent">i</span> EDU</strong>
+          <small>Computer Communication Development Institute</small>
+        </div>
+      </a>
+      <div class="top-actions">
+        <form class="site-search" id="siteSearchForm" role="search">
+        <label class="visually-hidden" for="siteSearchInput">Search this page</label>
+        <input id="siteSearchInput" type="search" placeholder="Search this page" autocomplete="off">
+        <button class="site-search-clear" id="siteSearchClear" type="button" aria-label="Clear search" hidden>×</button>
+        <button class="site-search-submit" type="submit">Search</button>
+      </form>
+        <button class="icon-btn" title="Notifications" onclick="showPage('notifications')">🔔</button>
+        <div class="profile-menu">
+          
+           <a class="profile-btn account-profile-avatar" href="profileProf.html" aria-label="Open profile">
+          <span class="avatar">AD</span>
+        </a>
+          
+        
+       
+      </div>
+    </div>
+  </header>
+ <aside id="sidebar" class="sidebar">
+    <div class="sidebar-role" id="sidebarRole">PROFESSOR</div>
+    <a href="dashboard-professor.html"><button class="nav-item active" onclick="showPage('dashboard')"><span>Home</span>
+  </button></a>
+  <a href="ann_prof.html"><button  class="nav-item"><span>Announcements</span>
+</button></a>
+<a href="classes.html" class="nav-item" data-page="classes"><span>Classes</span></a>
+<a href="meetings.html" class="nav-item" data-page="meetings"><span>Meetings</span></a>
+<a href="sched_prof.html"><button class="nav-item"><span>Class Schedule</span>
+</button></a>
+<a href="gradeProf.html"> <button class="nav-item" ><span>Grades</span>
+</button></a>
+<a href="settings-professor.html"> <button class="nav-item"> <span>Settings</span>
+</button></a>
+</aside>
+<main id="appContent" class="app-content">
+</main>
+</section>
+<!-- Professor-only dashboard content. JavaScript clones this into #appContent. -->
+<div class="app-content static-page-content" id="professorDashboardTemplate">
+  
+  <section class="portal-welcome" id="homeSection">
+    <div>
+      <span class="eyebrow">CCDI CAMPUS PORTAL · PROFESSOR HOME</span>
+      <h1>Good morning, Prof <span data-student-name> </span></h1>
+      <p>Your academic day, school services, and important updates in one place.</p>
+    </div>
+    <div class="welcome-date">
+      <span>WEDNESDAY</span>
+      <strong>15</strong>
+      <small>OCTOBER 2026</small>
+    </div>
+  </section>
+  <div class="stats-grid">
+    <div class="stat-card"><div class="stat-icon">▤</div><div class="label">My Classes</div><div class="value" data-professor-class-count>Loading...</div></div>
+    <div class="stat-card"><div class="stat-icon">✓</div><div class="label">Pending Grades</div><div class="value">Open Classes to review</div></div>
+    <div class="stat-card"><div class="stat-icon">▣</div><div class="label">Announcements</div><div class="value">2 new</div></div>
+    <div class="stat-card"><div class="stat-icon">▰</div><div class="label">Messages</div><div class="value">3 unread</div></div>
+  </div>
+  <div class="dashboard-grid">
+    <div class="panel">
+      <div class="panel-head"><h2>Today's Classes</h2><button class="text-link" onclick="showPage('schedule')">View All →</button></div>
+      <div class="dashboard-assignment-list" data-professor-dashboard-classes><p class="muted">Loading assigned classes...</p></div>
+    </div>
+    <div class="panel">
+      <div class="panel-head"><h2>Quick Actions</h2></div>
+      <div class="quick-actions">
+        <button class="quick-btn" onclick="showPage('announcements')">▣ &nbsp; Post Announcement</button>
+        <a class="quick-btn" href="classes.html">✓ &nbsp; Manage Classes and Grades</a>
+        <button class="quick-btn" onclick="showPage('classes')">▦ &nbsp; Manage Class Content</button>
+        <a class="quick-btn" href="sched_prof.html">▤ &nbsp; View Class Schedule</a>
+      </div>
+    </div>
+  </div>
+  <div class="dashboard-grid">
+    <section class="panel"><div class="panel-head"><div><h2>Announcements</h2><p class="muted">Published notices for faculty.</p></div><a class="text-link" href="announcements.html">All announcements</a></div><div class="announcement-list" data-announcements><p class="muted">Loading announcements...</p></div></section>
+    <section class="panel"><div class="panel-head"><div><h2>Meetings</h2><p class="muted">Upcoming official meetings.</p></div><a class="text-link" href="meetings.html">All meetings</a></div><div class="meeting-list" data-upcoming-meetings><p class="muted">Loading meetings...</p></div></section>
+  </div>
+</div>
+  <script src="script.js" defer></script>
+</body>
+</html>

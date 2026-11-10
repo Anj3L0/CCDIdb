@@ -1,0 +1,83 @@
+﻿    </div><div class="title-actions"><button class="btn btn-outline" type="submit" data-announcement-status="draft">Save Draft</button><button class="btn btn-primary" type="submit" data-announcement-status="published">Publish Announcement</button><button class="btn btn-outline" type="reset">Clear form</button></div><p class="muted" data-form-feedback="announcementForm" role="status" aria-live="polite"></p></form>
+  <form id="announcementForm" enctype="multipart/form-data"><input type="hidden" id="announcementId"><div class="form-grid">
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Announcements | CCDI EDU</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body data-page="announcements" data-role="student">
+    <div id="toast" class="toast">
+    </div>
+    <section id="appPage" class="app-page">
+      <header class="app-topbar">
+        <button class="mobile-menu" onclick="toggleSidebar()">[menu]</button>
+        <a class="brand" href="dashboard-student.html">
+        <img class="brand-logo" src="image/CCDI EDU.png" alt="CCDI EDU">
+        <div>
+          <strong>CCDI EDU</strong>
+          <small>Computer Communication Development Institute</small>
+        </div>
+      </a>
+      <div class="top-actions">
+        <form class="site-search" id="siteSearchForm" role="search">
+        <label class="visually-hidden" for="siteSearchInput">Search this page</label>
+        <input id="siteSearchInput" type="search" placeholder="Search this page" autocomplete="off">
+        <button class="site-search-clear" id="siteSearchClear" type="button" aria-label="Clear search" hidden>×</button>
+        <button class="site-search-submit" type="submit">Search</button>
+      </form>
+        <button class="icon-btn" title="Notifications" onclick="showPage('notifications')">🔔</button>
+        
+        </a>
+        <a class="btn btn-light" href="index.html">Logout</a>
+    </div>
+    </header>
+    <aside id="sidebar" class="sidebar">
+      <div class="sidebar-role" id="sidebarRole">STUDENT</div>
+      <button class="nav-item" data-page="dashboard" onclick="showPage('dashboard')">âŒ‚ <span>Home</span>
+    </button>
+    <button class="nav-item active"  onclick="showPage('announcements')"><span>Announcements</span>
+  </button>
+  <button class="nav-item" data-page="schedule" onclick="showPage('schedule')"><span>Class Schedule</span>
+</button>
+<button class="nav-item" data-page="grades" onclick="showPage('grades')">âœ“ <span>Grades</span>
+</button>
+<button class="nav-item" data-page="payments" onclick="showPage('payments')">â‚± <span>Tuition</span>
+</button>
+<button class="nav-item" data-page="enrollment" onclick="showPage('enrollment')">â–§ <span>Online Enrollment</span>
+</button>
+<button class="nav-item" data-page="events" onclick="showPage('events')">â—· <span>Events</span>
+</button>
+
+</button>
+<button class="nav-item" data-page="settings" onclick="showPage('settings')">âš™ <span>Settings</span>
+</button>
+</aside>
+<main id="appContent" class="app-content">
+</main>
+</section>
+<div class="app-content static-page-content" id="announcementsTemplate">
+  <section class="page-title"><div><h1>Announcements</h1><p>Important enrollment, campus, and academic notices.</p></div></section>
+  <section class="panel hidden" id="announcementManager"><div class="panel-head"><div><h2>Manage announcements</h2><p class="muted">Create drafts or publish notices to selected audiences.</p></div></div>
+    <form id="announcementForm"><input type="hidden" id="announcementId"><div class="form-grid">
+      <div class="form-group"><label for="announcementTitle">Title</label><input id="announcementTitle" maxlength="200" required></div>
+        <div class="form-group"><label for="announcementDate">Announcement date</label><input id="announcementDate" type="date" required></div>
+      <div class="form-group"><label for="announcementAudience">Audience</label><select id="announcementAudience"><option value="both">Students and Professors</option><option value="students">Students</option><option value="professors">Professors</option></select></div>
+      <div class="form-group"><label for="announcementAttachment">Attachment URL or existing image path</label><input id="announcementAttachment" type="text" maxlength="1000"></div>
+      <div class="form-group"><label for="announcementImage">Announcement image</label><input id="announcementImage" type="file" accept="image/jpeg,image/png,image/webp"><small class="muted">JPEG, PNG, or WebP, up to 5 MB.</small></div>
+      <div class="form-group full-row"><label for="announcementContent">Content</label><textarea id="announcementContent" maxlength="20000" required></textarea></div>
+    </div><div class="title-actions"><button class="btn btn-outline" type="submit" data-announcement-status="draft">Save Draft</button><button class="btn btn-primary" type="submit" data-announcement-status="published">Publish Announcement</button><button class="btn btn-outline" type="reset">Clear form</button></div></form>
+    <div class="table-wrap"><table><thead><tr><th>Title</th><th>Audience</th><th>Status</th><th>Actions</th></tr></thead><tbody data-admin-announcements><tr><td colspan="4" class="muted">Loading announcements...</td></tr></tbody></table></div>
+  </section>
+  <div class="announcement-list announcement-feed" data-announcement-list><p class="muted">Loading announcements...</p></div>
+  <div class="modal announcement-detail-modal hidden" id="announcementDetailModal" role="dialog" aria-modal="true" aria-labelledby="announcementDetailTitle">
+    <article class="modal-card announcement-detail-card"><button class="modal-close" type="button" data-close-announcement aria-label="Close announcement">×</button><div data-announcement-detail-content></div></article>
+  </div>
+</div>
+<script src="script.js">
+</script>
+</body>
+</html>
+
